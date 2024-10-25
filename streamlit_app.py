@@ -423,7 +423,10 @@ if seleccion_menu == "Administrador":
                 st.write("Eliminar Clases Programadas")
                 cursorxdxdd.execute("SELECT * FROM materiaprofe ")
                 clases_programadas = cursorxdxdd.fetchall()
-                clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_programadas[1], clases_programadas[2], clases_programadas[3], clases_programadas[4] )
+                MostarClasesXD = [f"{clase[1]} - {clase[2]} el {clase[3]} a las {clase[4]}" for clase in clases_programadas]
+                clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostarClasesXD)
+                id = clases_programadas[MostarClasesXD.index(clase_seleccionada)][0]
+
                
         
                
