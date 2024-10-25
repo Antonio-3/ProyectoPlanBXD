@@ -406,7 +406,7 @@ if seleccion_menu == "Administrador":
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursorxd = conexion.cursor()
                         cursorxd.execute(
-                            "INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (?, ?, ?, ?, '1')",
+                            "INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (?, ?, ?, ?, NULL)",
                             (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora))
                         )
                         conexion.commit()
