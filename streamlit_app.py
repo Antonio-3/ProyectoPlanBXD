@@ -409,10 +409,10 @@ if seleccion_menu == "Administrador":
                         cursorxd = conexion.cursor()
                         cursorxd.execute(
                             "INSERT INTO materiaprofe (Profesor, Materia, Carrera, Fecha, Horario, Asistencia) VALUES (?, ?, ?, ?, ?, NULL)",
-                            (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora))
+                            (seleccion_profeexdd, seleccion_materiaxdd, seleccion_carreraxdd, str(fecha), str(hora))
                         )
                         conexion.commit()
-                        st.success(f"Clase programada para: {seleccion_materiaxdd} con: {seleccion_profeexdd} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
+                        st.success(f"Clase programada para: {seleccion_profeexdd} con: {seleccion_materiaxdd} de la carrera {seleccion_carreraxdd} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
                         conexion.close()
 
 
