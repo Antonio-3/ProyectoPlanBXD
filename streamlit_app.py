@@ -412,7 +412,7 @@ if seleccion_menu == "Administrador":
                             (seleccion_profeexdd, seleccion_materiaxdd, seleccion_carreraxdd, str(fecha), str(hora))
                         )
                         conexion.commit()
-                        st.success(f"Clase programada para: {seleccion_profeexdd} con: {seleccion_materiaxdd} de la carrera {seleccion_carreraxdd} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
+                        st.success(f"Clase programada para el profesor {seleccion_profeexdd} con la materia {seleccion_materiaxdd} de la carrera {seleccion_carreraxdd} con fecha {fecha} a las: {hora} ha sido agregada exitosamente.")
                         conexion.close()
 
 
