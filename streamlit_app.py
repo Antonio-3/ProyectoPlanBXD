@@ -415,7 +415,17 @@ if seleccion_menu == "Administrador":
                 conexion.commit()
                 maestro = st.selectbox("Selecciona un maestro:", ["Carlos Martínez", "Laura Gómez", "Miguel Sánchez", "Ana Torres", "Sofía Rodríguez", "Pedro Hernández", "Walter Mata", "Victor Castillo", "Francisco Ochoa", "Quintero",])
                 materia = st.selectbox("Selecciona una materia:", ["Introducción a la Electrónica", "Programación icónica", "Proyectos de Ingeniería", "Electrónica de Potencia", "Emprendimiento", "Inglés V", "Fundamentos de Programación", "Estadística", "Programación", "Estructura de Datos", "Programación Avanzada", "Robótica"])
-                fecha = st.date_input("Selecciona la fecha de la clase:")
+                Hoy = datetime.datetime.now()
+                Anosiguiente = today.year + 1
+                XD = datetime.date(next_year, 12, 31)
+                
+                fecha = st.date_input(
+                    "Seleccione la fecha",
+                    (Hoy, datetime.date(Anosiguiente, 1, 7)),
+                    today,
+                    XD,
+                    format="MM.DD.YYYY",
+                )
 
                 
                 hora = st.time_input("Selecciona la hora de la clase:")
