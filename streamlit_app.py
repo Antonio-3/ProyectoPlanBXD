@@ -421,9 +421,10 @@ if seleccion_menu == "Administrador":
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 cursorxdxdd = conexion.cursor()
                 st.write("Eliminar Clases Programadas")
-                clases_programadas = cursorxdxdd.execute("SELECT * FROM materiaprofe ")
+                cursorxdxdd.execute("SELECT * FROM materiaprofe ")
+                clases_programadas = cursorxdxdd.fetchall()
                 clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_programadas[1], clases_programadas[2], clases_programadas[3], clases_programadas[4], )
-                id_clase_seleccionada = clase_seleccionada[clases_programadas[0]]
+               
         
                 if st.button("Eliminar Clase"):
                         cursor.execute("DELETE FROM materiaprofe WHERE id=?", (id_clase_seleccionada,))
