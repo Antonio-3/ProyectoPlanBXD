@@ -427,8 +427,7 @@ if seleccion_menu == "Administrador":
                 clases_programadas = cursorxdxdd.fetchall()
                 MostarClasesXD = [f"{clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
                 clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostarClasesXD)
-                id = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
-                
+                id = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]               
                 if st.button("Eliminar Clase"):
                         cursorawdawd.execute("DELETE FROM materiaprofe WHERE ID=?", (id,))
                         conexion.commit()
