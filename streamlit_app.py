@@ -395,7 +395,8 @@ if seleccion_menu == "Administrador":
                 
                 fecha = st.date_input(
                     "Seleccione la fecha",
-                    (Hoy,
+                    (Hoy),
+                    Hoy,
                     format="MM.DD.YYYY",
                 )
 
