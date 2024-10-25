@@ -417,7 +417,7 @@ if seleccion_menu == "Administrador":
                 materia = st.selectbox("Selecciona una materia:", ["Introducción a la Electrónica", "Programación icónica", "Proyectos de Ingeniería", "Electrónica de Potencia", "Emprendimiento", "Inglés V", "Fundamentos de Programación", "Estadística", "Programación", "Estructura de Datos", "Programación Avanzada", "Robótica"])
                 Hoy = datetime.datetime.now()
                 Anosiguiente = Hoy.year + 1
-                XD = datetime.date(next_year, 12, 31)
+                XD = datetime.date(Anosiguiente, 12, 31)
                 
                 fecha = st.date_input(
                     "Seleccione la fecha",
