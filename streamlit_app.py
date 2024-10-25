@@ -390,7 +390,7 @@ if seleccion_menu == "Administrador":
                 st.write("  \n")
                 seleccion_profeexdd = st.selectbox('Selecciona un profesor:', df1['Profesor'])
                 seleccion_materiaxdd = st.selectbox('Selecciona una materia:', df2['Materia'])
-                seleccion_carreraxdd = st.selectbox('Selecciona la carrera:', df2['Carrera'])
+                seleccion_carreraxdd = st.selectbox('Selecciona la carrera:', df3['Carrera'])
                 Hoy = datetime.datetime.now()
                 Anosiguiente = Hoy.year + 1
                 XD = datetime.date(Anosiguiente, 12, 31)
