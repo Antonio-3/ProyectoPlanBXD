@@ -399,17 +399,14 @@ if seleccion_menu == "Administrador":
                     Hoy,
                     format="MM.DD.YYYY",
                 )
-
-                
+ 
                 hora = st.time_input("Selecciona la hora de la clase:")
         
                 if st.button("Agregar Clase"):
-                        cursor.execute('''
-                        INSERT INTO clases_programadas (maestro, materia, fecha, hora)
-                        VALUES (?, ?, ?, ?)
-                        ''', (maestro, materia, str(fecha), str(hora)))
-                        conexion.commit()
-                        st.success(f"Clase programada para {materia} con {maestro} el {fecha} a las {hora} ha sido agregada exitosament.")
+                        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                        cursorxd = conexion.cursor()
+                        cursorxd.execute("INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (xd, xd1, xd2, xd3, NULL)", (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora)))
+                        st.success(f"Clase programada para: {materia} con: {maestro} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
                         conexion.close()
                         
         
