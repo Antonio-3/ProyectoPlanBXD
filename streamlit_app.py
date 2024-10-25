@@ -426,11 +426,11 @@ if seleccion_menu == "Administrador":
                 cursorxdxdd.execute("SELECT * FROM materiaprofe ")
                 clases_programadas = cursorxdxdd.fetchall()
                 if clases_programadas:
-                        MostrarClasesXD = [f"{clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
+                        MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
                         clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostrarClasesXD)
         
                          # Obtener la ID de la clase seleccionada
-                        id = MostrarClasesXD[0]
+                        id = int(clase_seleccionada.split(" - ")[0])
         
                 if st.button("Eliminar Clase"):
                         cursor.execute("DELETE FROM materiaprofe WHERE ID=?", (id,))
