@@ -384,7 +384,7 @@ if seleccion_menu == "Administrador":
                 st.write("Agregar Datos")
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 df1 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
-                df2 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                df2 = pd.read_sql("SELECT DISTINCT Materia FROM materiaprofe;", conexion)
                 conexion.close()
                 st.write("  \n")
                 seleccion_profeexdd = st.selectbox('Selecciona un profesor:', df1['Profesor'])
