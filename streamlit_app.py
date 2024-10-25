@@ -380,41 +380,16 @@ if seleccion_menu == "Administrador":
                 options=["Agregar Datos","Eliminar Datos"]
         )
 
-        maestros_por_materia = {
-                "ISET": {
-                        "Introducción a la Electronica": "Carlos Martínez",
-                        "Programación icónica": "Laura Gómez",
-                        "Proyectos de Ingenieria": "Miguel Sánchez",
-                        "Electronica de Potencia": "Ana Torres",
-                        "Emprendimiento": "Sofía Rodríguez",
-                        "Inglés V": "Pedro Hernández"
-                },
-                "ICI": {
-                        "Fundamentos de Programación": "Walter Mata",
-                        "Estadística": "Victor Castillo",
-                        "Programación": "Walter Mata",
-                        "Estructura de Datos": "Francisco Ochoa",
-                        "Programación Avanzada": "Walter Mata",
-                        "Robótica": "Quintero"
-                }
-        }
-    
         if seleccion_admin == "Agregar Datos":
                 st.write("Agregar Datos")
-                conexion = sqlite3.connect('asistencias.db')
+                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                df1 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                df2 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                st.write("  \n")
+                seleccion_profeexdd = st.selectbox('Selecciona un profesor:', df1['Profesor'])
+                seleccion_materiaxdd = st.selectbox('Selecciona una materia:', df2['Materia'])
                 cursor = conexion.cursor()
-                cursor.execute('''
-                CREATE TABLE IF NOT EXISTS clases_programadas (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    maestro TEXT,
-                    materia TEXT,
-                    fecha TEXT,
-                    hora TEXT
-                )
-                ''')
-                conexion.commit()
-                maestro = st.selectbox("Selecciona un maestro:", ["Carlos Martínez", "Laura Gómez", "Miguel Sánchez", "Ana Torres", "Sofía Rodríguez", "Pedro Hernández", "Walter Mata", "Victor Castillo", "Francisco Ochoa", "Quintero",])
-                materia = st.selectbox("Selecciona una materia:", ["Introducción a la Electrónica", "Programación icónica", "Proyectos de Ingeniería", "Electrónica de Potencia", "Emprendimiento", "Inglés V", "Fundamentos de Programación", "Estadística", "Programación", "Estructura de Datos", "Programación Avanzada", "Robótica"])
+                conexion.close()
                 Hoy = datetime.datetime.now()
                 Anosiguiente = Hoy.year + 1
                 XD = datetime.date(Anosiguiente, 12, 31)
