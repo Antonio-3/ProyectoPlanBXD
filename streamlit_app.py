@@ -434,7 +434,7 @@ if seleccion_menu == "Administrador":
                         conexion.commit()
                         st.success("Clase eliminada exitosamente.")
                 else:
-                        st.info("Selecciona alguna clase para eliminarla")
+                        st.info("No hay clases programadas para eliminar.")
                         conexion.close()
 
                
