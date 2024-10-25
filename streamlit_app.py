@@ -409,9 +409,11 @@ if seleccion_menu == "Administrador":
                             "INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (?, ?, ?, ?, '1')",
                             (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora))
                         )
-
+                        conexion.commit()
                         st.success(f"Clase programada para: {seleccion_materiaxdd} con: {seleccion_profeexdd} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
                         conexion.close()
+
+
                         
         
         if seleccion_admin == "Eliminar Datos":
