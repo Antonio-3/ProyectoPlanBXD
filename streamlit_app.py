@@ -405,7 +405,7 @@ if seleccion_menu == "Administrador":
                 if st.button("Agregar Clase"):
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursorxd = conexion.cursor()
-                        cursorxd.execute("INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (xd, xd1, xd2, xd3, NULL)", (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora)))
+                        cursorxd.execute("INSERT INTO materiaprofe (Profesor, Materia, Fecha, Horario, Asistencia) VALUES (xd, xd1, xd2, xd3, '1')", (seleccion_profeexdd, seleccion_materiaxdd, str(fecha), str(hora)))
                         st.success(f"Clase programada para: {materia} con: {maestro} el: {fecha} a las: {hora} ha sido agregada exitosamente.")
                         conexion.close()
                         
