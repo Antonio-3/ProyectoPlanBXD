@@ -385,11 +385,10 @@ if seleccion_menu == "Administrador":
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 df1 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
                 df2 = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                conexion.close()
                 st.write("  \n")
                 seleccion_profeexdd = st.selectbox('Selecciona un profesor:', df1['Profesor'])
                 seleccion_materiaxdd = st.selectbox('Selecciona una materia:', df2['Materia'])
-                cursor = conexion.cursor()
-                conexion.close()
                 Hoy = datetime.datetime.now()
                 Anosiguiente = Hoy.year + 1
                 XD = datetime.date(Anosiguiente, 12, 31)
