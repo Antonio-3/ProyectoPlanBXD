@@ -430,7 +430,7 @@ if seleccion_menu == "Administrador":
                         clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostrarClasesXD)
         
                          # Obtener la ID de la clase seleccionada
-                        id = int(clase_seleccionada.split(" - ")[0])
+                        id = int(clase_seleccionada[0])
         
                 if st.button("Eliminar Clase"):
                         cursor.execute("DELETE FROM materiaprofe WHERE ID=?", (id,))
