@@ -233,7 +233,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Conectar a la base de datos
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
-                        cursor.execute("SELECT * FROM materiaprofe WHERE Materia=?",(seleccion_materiaxd,))
+                        cursor.execute("SELECT * FROM materiaprofe WHERE Materia=? AND (Asistencia=0 OR Asistencia=1)",(seleccion_materiaxd,))
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         # Crear una instancia de FPDF
