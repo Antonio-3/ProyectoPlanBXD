@@ -68,7 +68,7 @@ if seleccion_menu == "Jefe de grupo":
                 if clases_programadas:
                         MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
                         clase_seleccionada = st.selectbox("Selecciona la clase pendiente:", MostrarClasesXD)
-        
+                        JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
                         st.write("\n")
                         st.info("El Profesor asistió a la clase?")
                         
