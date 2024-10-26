@@ -63,11 +63,15 @@ if seleccion_menu == "Jefe de grupo":
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 cursorxdxdd = conexion.cursor()
                 cursorlol = conexion.cursor()
-                st.write("Asignar Asistencias a clases pendientes")
                 cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE Asistencia IS NULL")
                 clases_programadas = cursorxdxdd.fetchall()
                 MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
                 clase_seleccionada = st.selectbox("Selecciona la clase pendiente:", MostrarClasesXD)
+
+                st.write("\n")
+                st.info("El profesor Asistio a la clase?")
+                if st.button("Asignar asistencia"):
+
 
                         
         if seleccion_jefe == "Modificar Asistencia":
