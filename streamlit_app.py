@@ -64,7 +64,7 @@ if seleccion_menu == "Jefe de grupo":
                 cursorxdxdd = conexion.cursor()
                 cursorlol = conexion.cursor()
                 st.write("Asignar Asistencias a clases pendientes")
-                cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE Asistencia IS NULL")
+                cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE Asistencia=''")
                 clases_programadas = cursorxdxdd.fetchall()
                 if clases_programadas:
                         MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
