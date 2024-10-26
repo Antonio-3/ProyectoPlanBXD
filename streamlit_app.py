@@ -61,6 +61,7 @@ if seleccion_menu == "Jefe de grupo":
         )
         
         if seleccion_jefe == "Asignar Asistencia":
+                
 
         if seleccion_jefe == "Modificar Asistencia":
                 st.write("Modificar asistencias")
