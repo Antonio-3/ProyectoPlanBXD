@@ -94,9 +94,35 @@ if seleccion_menu == "Jefe de grupo":
 
                         
         if seleccion_jefe == "Modificar Asistencia":
-                st.write("Modificar asistencias")
+                st.title("Modificar asistencias")
+                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                cursorxdxdd = conexion.cursor()
+                cursorlol = conexion.cursor()
+                cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE (Asistencia=1 OR Asistencia=0)")
+                clases_programadas = cursorxdxdd.fetchall()
+                if clases_programadas:
+                        MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
+                        clase_seleccionada = st.selectbox("Selecciona la clase a modificar:", MostrarClasesXD)
+                        JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
+                        st.write("\n")
+                        st.info("El Profesor asistió a la clase?")
+                        izquierdaXD, DerechaXD = st.columns(2)
+                        if izquierdaXD.button("Si asistió", use_container_width=True):
+                                cursorlol.execute("UPDATE materiaprofe SET Asistencia=1 WHERE ID= ?", (JAJAJAXDXD,))
+                                conexion.commit()
+                                st.success("Asistencia asignada exitosamente!.")
+                                conexion.close()
+                                
+                        if DerechaXD.button("No asistió", use_container_width=True):
+                                cursorlol.execute("UPDATE materiaprofe SET Asistencia=0 WHERE ID= ?", (JAJAJAXDXD,))
+                                conexion.commit()
+                                st.success("Asistencia asignada exitosamente!.")
+                                conexion.close()
+                        
 
-
+                else:
+                        st.info("No hay clases pendientes.")
+                        st.write("\n")
 
 
 
