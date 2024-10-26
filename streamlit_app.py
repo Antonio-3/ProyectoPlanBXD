@@ -70,13 +70,20 @@ if seleccion_menu == "Jefe de grupo":
                         clase_seleccionada = st.selectbox("Selecciona la clase pendiente:", MostrarClasesXD)
         
                         st.write("\n")
-                        st.info("El profesor Asistio a la clase?")
+                        st.info("El Profesor asistió a la clase?")
                         
                         izquierdaXD, DerechaXD = st.columns(2)
                         if izquierdaXD.button("Si asistió", use_container_width=True):
-                            izquierdaXD.markdown("Si asistió")
+                                cursorlol.execute("UPDATE materiaprofe SET Asistencia=1 WHERE ID= ?", (JAJAJAXDXD,))
+                                conexion.commit()
+                                st.success("Asistencia asignada exitosamente!.")
+                                conexion.close()
+                                
                         if DerechaXD.button("No asistió", use_container_width=True):
-                            DerechaXD.markdown("No asistió")
+                                cursorlol.execute("UPDATE materiaprofe SET Asistencia=0 WHERE ID= ?", (JAJAJAXDXD,))
+                                conexion.commit()
+                                st.success("Asistencia asignada exitosamente!.")
+                                conexion.close()
                         
 
                 else:
