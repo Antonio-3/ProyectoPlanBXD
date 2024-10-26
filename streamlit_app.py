@@ -75,7 +75,7 @@ if seleccion_menu == "Jefe de grupo":
                                 st.write(XD)
 
                 else:
-                        st.write("No hay clases pendientes.")
+                        st.info("No hay clases pendientes.")
 
 
                         
