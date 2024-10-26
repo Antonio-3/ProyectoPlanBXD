@@ -65,13 +65,17 @@ if seleccion_menu == "Jefe de grupo":
                 cursorlol = conexion.cursor()
                 cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE Asistencia IS NULL")
                 clases_programadas = cursorxdxdd.fetchall()
-                MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
-                clase_seleccionada = st.selectbox("Selecciona la clase pendiente:", MostrarClasesXD)
+                if clases_programadas:
+                        MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
+                        clase_seleccionada = st.selectbox("Selecciona la clase pendiente:", MostrarClasesXD)
+        
+                        st.write("\n")
+                        st.info("El profesor Asistio a la clase?")
+                        if st.button("Asignar asistencia"):
+                                st.write(XD)
 
-                st.write("\n")
-                st.info("El profesor Asistio a la clase?")
-                if st.button("Asignar asistencia"):
-                        st.write(XD)
+                                else:
+                                st.info("No hay clases pendientes.")
 
 
                         
