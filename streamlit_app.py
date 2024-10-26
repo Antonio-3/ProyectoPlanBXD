@@ -71,15 +71,13 @@ if seleccion_menu == "Jefe de grupo":
         
                         st.write("\n")
                         st.info("El profesor Asistio a la clase?")
-                        if st.button("Si asistio"):
-                                st.write("Si asistio")
-                        if st.button("No asistio"):
-                                st.write("No asistio")
-                        left, right = st.columns(3)
-                        if left.button("Plain button", use_container_width=True):
-                            left.markdown("You clicked the plain button.")
-                        if right.button("Material button", icon=":material/mood:", use_container_width=True):
-                            right.markdown("You clicked the Material button.")
+                        
+                        izquierdaXD, DerechaXD = st.columns(2)
+                        if izquierdaXD.button("Si asistio", use_container_width=True):
+                            izquierdaXD.markdown("Si asistio")
+                        if DerechaXD.button("No asistio", use_container_width=True):
+                            DerechaXD.markdown("No asistio")
+                        
 
                 else:
                         st.info("No hay clases pendientes.")
