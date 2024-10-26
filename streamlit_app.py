@@ -152,9 +152,6 @@ if seleccion_menu == "Jefe de grupo":
         
         if seleccion_reporte == "Reporte por profesor":
                 st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
                 st.title("Reporte por profesor")
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
