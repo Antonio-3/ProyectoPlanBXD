@@ -97,23 +97,6 @@ if seleccion_menu == "Jefe de grupo":
                 st.write("Modificar asistencias")
 
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -265,9 +248,6 @@ if seleccion_menu == "Jefe de grupo":
 
                         
         if seleccion_reporte == "Reporte por materia":
-                st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
                 st.write("  \n")
                 st.title("Reporte por materia")
                 # Conectar a la base de datos
