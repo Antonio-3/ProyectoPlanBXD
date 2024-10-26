@@ -73,10 +73,10 @@ if seleccion_menu == "Jefe de grupo":
                         st.info("El profesor Asistio a la clase?")
                         
                         izquierdaXD, DerechaXD = st.columns(2)
-                        if izquierdaXD.button("Si asistio", use_container_width=True):
-                            izquierdaXD.markdown("Si asistio")
-                        if DerechaXD.button("No asistio", use_container_width=True):
-                            DerechaXD.markdown("No asistio")
+                        if izquierdaXD.button("Si asistió", use_container_width=True):
+                            izquierdaXD.markdown("Si asistió")
+                        if DerechaXD.button("No asistió", use_container_width=True):
+                            DerechaXD.markdown("No asistió")
                         
 
                 else:
