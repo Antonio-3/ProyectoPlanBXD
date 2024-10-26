@@ -62,7 +62,6 @@ if seleccion_menu == "Jefe de grupo":
         
         if seleccion_jefe == "Asignar Asistencia":
                 st.write("\n")
-                st.write("\n")
                 st.title("Asignar asistencias")
 
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
@@ -75,9 +74,7 @@ if seleccion_menu == "Jefe de grupo":
                         JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
                         st.write(JAJAJAXDXD)
 
-        
-               
-                        
+                      
         if seleccion_jefe == "Modificar Asistencia":
                 st.write("Modificar asistencias")
 
