@@ -1,4 +1,4 @@
-import streamlit as st
+ import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
 import sqlite3
@@ -116,7 +116,7 @@ if seleccion_menu == "Jefe de grupo":
                         cursor4 = conexion.cursor()
                         cursor5 = conexion.cursor()
                         cursor6 = conexion.cursor()
-                        cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=? AND Asistencia=0 OR Asistencia=1",(seleccion_profeexd,))
+                        cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=? AND (Asistencia=0 OR Asistencia=1)",(seleccion_profeexd,))
                         cursor2.execute("SELECT COUNT(Materia) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         cursor3.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=1",(seleccion_profeexd,))
                         cursor4.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=0",(seleccion_profeexd,))
