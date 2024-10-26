@@ -74,8 +74,8 @@ if seleccion_menu == "Jefe de grupo":
                         if st.button("Asignar asistencia"):
                                 st.write(XD)
 
-                        else:
-                                st.write("No hay clases pendientes.")
+                else:
+                        st.write("No hay clases pendientes.")
 
 
                         
