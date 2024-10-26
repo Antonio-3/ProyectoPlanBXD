@@ -61,10 +61,50 @@ if seleccion_menu == "Jefe de grupo":
         )
         
         if seleccion_jefe == "Asignar Asistencia":
-                st.write("Asignar asistencias")
+                st.write("\n")
+                st.write("\n")
+                st.title("Asignar asistencias")
+
+                conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                cursorxdxdda = conexion.cursor()
+                cursorxdxdda.execute("SELECT * FROM materiaprofe WHERE Asistencia=NULL")
+                clases_programadas = cursorxdxdda.fetchall()
+                if clases_programadas:
+                        MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
+                         seleccion_clase_asistencia = st.selectbox("Seleccione una clase programada pendiente:", MostrarClasesXD)
+                        JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
+                        st.write(JAJAJAXDXD)
+
+        
+               
                         
         if seleccion_jefe == "Modificar Asistencia":
                 st.write("Modificar asistencias")
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
                 
         st.write("  \n")
         st.write("  \n")
