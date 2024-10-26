@@ -75,7 +75,7 @@ if seleccion_menu == "Jefe de grupo":
                                 st.write("Si asistio")
                         if st.button("No asistio"):
                                 st.write("No asistio")
-                        left, right = st.columns(2)
+                        left, right = st.columns(3)
                         if left.button("Plain button", use_container_width=True):
                             left.markdown("You clicked the plain button.")
                         if right.button("Material button", icon=":material/mood:", use_container_width=True):
