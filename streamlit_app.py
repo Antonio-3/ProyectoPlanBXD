@@ -428,9 +428,7 @@ if seleccion_menu == "Administrador":
                 if clases_programadas:
                         MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
                         clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostrarClasesXD)
-        
-                         # Obtener la ID de la clase seleccionada
-                        id = int(MostrarClasesXD.split(" - ")[0])
+                        id = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
                         st.write(id)
                 if st.button("Eliminar Clase"):
                         cursor.execute("DELETE FROM materiaprofe WHERE ID=?", (id,))
