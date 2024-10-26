@@ -59,12 +59,10 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Apartado de Asistencias",
                 options=["Asignar Asistencia","Modificar Asistencia"]
         )
-        
-if seleccion_jefe == "Asignar Asistencia":
-                
-
-if seleccion_jefe == "Modificar Asistencia":
-        st.write("Modificar asistencias")
+        if seleccion_jefe == "Asignar Asistencia":
+                st.write("Modificar asistencias")
+        if seleccion_jefe == "Modificar Asistencia":
+                st.write("Modificar asistencias")
 
 
         
