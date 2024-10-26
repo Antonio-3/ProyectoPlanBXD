@@ -63,8 +63,8 @@ if seleccion_menu == "Jefe de grupo":
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 cursorxdxdd = conexion.cursor()
                 cursorlol = conexion.cursor()
-                st.write("Eliminar Clases Programadas")
-                cursorxdxdd.execute("SELECT * FROM materiaprofe ")
+                st.write("Asignar Asistencias a clases pendientes")
+                cursorxdxdd.execute("SELECT * FROM materiaprofe WHERE Asistencia=NULL")
                 clases_programadas = cursorxdxdd.fetchall()
                 if clases_programadas:
                         MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
