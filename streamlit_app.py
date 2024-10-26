@@ -71,6 +71,7 @@ if seleccion_menu == "Jefe de grupo":
                 st.write("\n")
                 st.info("El profesor Asistio a la clase?")
                 if st.button("Asignar asistencia"):
+                        st.write(XD)
 
 
                         
