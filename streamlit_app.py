@@ -431,7 +431,7 @@ if seleccion_menu == "Administrador":
                         id = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
                         st.write(id)
                         if st.button("Eliminar Clase"):
-                                cursor.execute("DELETE FROM materiaprofe WHERE ID=?", (id,))
+                                cursor.execute("DELETE FROM materiaprofe WHERE ID=?", (id))
                                 conexion.commit()
                                 st.success("Clase eliminada exitosamente.")
         else:
