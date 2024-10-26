@@ -71,7 +71,7 @@ if seleccion_menu == "Jefe de grupo":
                 clases_programadas = cursorxdxdda.fetchall()
                 if clases_programadas:
                         MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
-                         seleccion_clase_asistencia = st.selectbox("Seleccione una clase programada pendiente:", MostrarClasesXD)
+                        seleccion_clase_asistencia = st.selectbox("Seleccione una clase programada pendiente:", MostrarClasesXD)
                         JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
                         st.write(JAJAJAXDXD)
 
