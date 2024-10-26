@@ -269,7 +269,6 @@ if seleccion_menu == "Jefe de grupo":
 
                         
         if seleccion_reporte == "Reporte por materia":
-                st.write("  \n")
                 st.title("Reporte por materia")
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
@@ -349,10 +348,6 @@ if seleccion_menu == "Jefe de grupo":
                         
                 
         if seleccion_reporte == "Reporte global":
-                st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
                 st.title("Reporte Global")
                 # Función para generar el PDF
                 def generar_pdf():
