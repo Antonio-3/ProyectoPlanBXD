@@ -31,7 +31,6 @@ if seleccion_menu == "":
         st.image(image='img/LogoUnixd.png', caption="", use_column_width=True)
         st.write("\n")
         st.title("Bienvenidos a nuestro proyecto :)")
-        st.write("Somos Antonio, Perla , Josue y Danahy, estudiantes de la Universidad De Colima. ")
         st.write("\n")
         st.write("Este proyecto tiene como objetivo crear un programa para que un jefe de grupo pueda asignar las asistencias de los maestros dependiendo de su carrera")
         st.write("\n")
