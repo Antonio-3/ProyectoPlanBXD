@@ -60,16 +60,23 @@ if seleccion_menu == "Jefe de grupo":
                 options=["Asignar Asistencia","Modificar Asistencia"]
         )
         if seleccion_jefe == "Asignar Asistencia":
-                st.write("\n")
-                st.title("Asignar asistencias")
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                cursorxdxdda = conexion.cursor()
-                cursorxdxdda.execute("SELECT * FROM materiaprofe WHERE Asistencia=NULL")
-                clases_programadaxds = cursorxdxdda.fetchall()
-                if clases_programadaxds:
-                        MostrarClasesXa = [f"{clasee[0]} - {clasee[1]} - {clasee[2]} - {clasee[3]} - {clasee[4]} - {clasee[5]}" for clasee in clases_programadaxds]
-                        seleccion_claseasistencia = st.selectbox("Seleccione una clase programada pendiente:", MostrarClasesXa)
-                        JAJAJAXDXDa = clases_programadaxds[MostrarClasesXa.index(seleccion_claseasistencia)][0]
+                cursorxdxdd = conexion.cursor()
+                cursorlol = conexion.cursor()
+                st.write("Eliminar Clases Programadas")
+                cursorxdxdd.execute("SELECT * FROM materiaprofe ")
+                clases_programadas = cursorxdxdd.fetchall()
+                if clases_programadas:
+                        MostrarClasesXD = [f"{clase[0]} - {clase[1]} - {clase[2]} - {clase[3]} - {clase[4]} - {clase[5]}" for clase in clases_programadas]
+                        clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", MostrarClasesXD)
+                        JAJAJAXDXD = clases_programadas[MostrarClasesXD.index(clase_seleccionada)][0]
+                        if st.button("Eliminar Clase"):
+                                cursorlol.execute("DELETE FROM materiaprofe WHERE ID=?", (JAJAJAXDXD,))
+                                conexion.commit()
+                                st.success("Clase eliminada exitosamente.")
+                                conexion.close()
+                        else:
+                                st.info("No hay clases programadas para eliminar.")
                         st.write(JAJAJAXDXDa)
                         
         if seleccion_jefe == "Modificar Asistencia":
