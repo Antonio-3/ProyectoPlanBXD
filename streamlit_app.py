@@ -237,6 +237,8 @@ if seleccion_menu == "Jefe de grupo":
                         
                         # Cerrar la conexión
                         conexion.close()
+                        # Retornar el contenido del PDF en bytes
+                        return pdf.output(dest='S').encode('latin1')
                 # Botón para generar el PDF
                 if st.button("Generar Reporte"):
                         # Generar el PDF
