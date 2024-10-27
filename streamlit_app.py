@@ -294,10 +294,10 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(200, 10, 'Reporte de Profesor', ln=True, align='C')
                         # Espacio adicional
                         pdf.ln(10)
-                        # Establecer el tipo de fuente para el contenido
+                        #tipo de fuente para el contenido
                         pdf.set_font('Arial', '', 12)
 
-                        # Encabezados de la tabla ajustados
+                        # Encabezados de la tabla
                         pdf.cell(10, 10, 'ID', 1)        
                         pdf.cell(45, 10, 'Profesor', 1)   
                         pdf.cell(40, 10, 'Materia', 1)    
@@ -307,7 +307,7 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(20, 10, 'Asistencia', 1)
                         pdf.ln()
                         
-                        # Agregar los registros de materias al PDF con ajustes
+                        # Agregar los registros de materias al PDF
                         for materia in materiaprofe:
                             pdf.cell(10, 10, str(materia[0]), 1)   
                             pdf.cell(45, 10, materia[1], 1)        
@@ -335,7 +335,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Generar el PDF
                         pdf_content = generar_pdf()
                         st.caption("100% completado...")
-                        # Crear un botón de descarga
+                        #botón de descarga
                         st.download_button(
                                 label="Descargar Reporte en PDF",
                                 data=pdf_content,
@@ -360,20 +360,20 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.set_auto_page_break(auto=True, margin=15)
                         # Agregar una página
                         pdf.add_page()
-                        # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
+                        # Establecer el tipo de fuente
                         pdf.set_font('Arial', 'B', 16)
                         # Título del reporte
                         pdf.cell(200, 10, 'Reporte Global', ln=True, align='C')
                         # Espacio adicional
                         pdf.ln(10)
-                        # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
+                        # el tipo de fuente para el contenido
                         pdf.set_font('Arial', '', 12)
 
-                        # Encabezados de la tabla ajustados
+                        # Encabezados de la tabla
                         pdf.cell(60, 10, 'Tasa de cumplimiento', 1)
                         pdf.ln()
                         
-                        # Agregar los registros de materias al PDF con ajustes
+                        # Agregar los registros de materias al PDF
                         for materia in materiaprofe:
                             pdf.cell(60, 10, str(materia[0]) + '%', 1)  
                             pdf.ln()
@@ -388,13 +388,13 @@ if seleccion_menu == "Jefe de grupo":
                         # Cerrar la conexión
                         conexion.close()
                         # Retornar el contenido del PDF en bytes
-                        return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
+                        return pdf.output(dest='S').encode('latin1')  #Dest 'S' devuelve el contenido como un string
                 # Botón para generar el PDF
                 if st.button("Generar Reporte"):
                         # Generar el PDF
                         pdf_content = generar_pdf()
                         st.caption("100% completado...")
-                        # Crear un botón de descarga
+                        #botón de descarga
                         st.download_button(
                                 label="Descargar Reporte en PDF",
                                 data=pdf_content,
